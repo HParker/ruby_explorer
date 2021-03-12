@@ -6,7 +6,7 @@ ruby '3.0.0'
 gem 'rails', github: 'rails/rails', branch: 'main'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
