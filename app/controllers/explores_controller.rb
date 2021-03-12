@@ -1,12 +1,18 @@
 require 'ripper'
 
+DEFAULT_PROGRAM = <<~RUBY
+def foo(bar)
+  bar * bar
+end
+RUBY
+
 class Explore
   attr_accessor :code
-  def initialize(code)
-    @code = code || ""
+  def initialize(code = nil)
+    @code = code || DEFAULT_PROGRAM
   end
 
-  def analyse
+  def analyze
     true
   end
 
@@ -26,11 +32,7 @@ end
 class ExploresController < ApplicationController
   # GET /explores or /explores.json
   def index
-    @explore = Explore.new(params[:code])
-
-    if params[:code]
-      @explore.code = params[:code]
-    end
+    @explore = Explore.new
   end
 
   # GET /explores/1 or /explores/1.json
@@ -48,7 +50,7 @@ class ExploresController < ApplicationController
   # POST /explores or /explores.json
   def create
     @explore = Explore.new(params[:code])
-    render :show
+    render partial: "explore"
   end
 
   # PATCH/PUT /explores/1 or /explores/1.json

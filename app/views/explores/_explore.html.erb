@@ -1,5 +1,22 @@
-<div id="<%= dom_id explore %>" class="scaffold_record">
-  <p>
-    <%= link_to "Show this explore", explore %>
-  </p>
+<div class="row sexp">
+  <div class="column">
+    <h2>Instructions</h2>
+    <div id="instructions">
+      <pre><code><% @explore.instructions.lines.each do |line| %><%= line %><% end %></code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="row lex">
+  <div class="column">
+    <h2>Lex</h2>
+    <pre><code><% @explore.lex.each do |ll| %><%= format_lex_line(ll) %><% end %></code></pre>
+  </div>
+</div>
+
+<div class="row sexp">
+  <div class="column">
+    <h2>Sexp</h2>
+    <pre><code><%= @explore.sexp.pretty_inspect %></code></pre>
+  </div>
 </div>

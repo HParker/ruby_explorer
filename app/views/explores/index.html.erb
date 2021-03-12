@@ -1,28 +1,58 @@
-<p id="notice"><%= notice %></p>
-<div class="flex-container">
-  <div class="input">
-    <%= form_with url: "/explores", id: "code", local: false do |form| %>
-      <%= form.submit "analyse" %>
-      <%= form.text_area :code, id: "editor", class: "cm-s-dracula" %>
-    <% end %>
-  </div>
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 
-  <div id="result">
-  </div>
+<!-- CSS Reset -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<!-- Milligram CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+
+<p id="notice"><%= notice %></p>
+<div class="navigation">
+  <section class="container">
+    <div class="row">
+      <div class="column">
+        <h1 class="title">
+          Ruby Explorer
+        </h1>
+      </div>
+    </div>
+  </section>
 </div>
+
+<section class="container">
+  <div class="home">
+    <div class="row home">
+      <div id="input" class="column">
+        <h2>Ruby</h2>
+        <%= form_with url: "/explores", id: "code", local: false do |form| %>
+          <fieldset>
+            <%= form.text_area :code, id: "editor", value: "def foo(bar)\n  bar * bar\nend" %>
+            <br />
+            <%= form.submit "analyze", class: "button-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+      <div id="result" class="column">
+        <%= render "explore" %>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
  window.addEventListener("load", () => {
    const element = document.querySelector("#code");
    const result = document.querySelector("#result");
+   const editor = document.querySelector("#editor");
    element.addEventListener("ajax:success", (event) => {
      const [_data, _status, xhr] = event.detail;
      result.innerHTML = xhr.responseText;
    });
    element.addEventListener("ajax:error", () => {
-     element.insertAdjacentHTML("beforeend", "<p>ERROR</p>");
+     result.innerHTML = "ERROR";
    });
  });
-
 
 </script>

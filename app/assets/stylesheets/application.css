@@ -17,9 +17,39 @@
 body {
     background-color: #d3d3d3;
 }
+div .home {
+    padding-top: 5rem;
+}
+
+#result pre {
+    height: 200px;
+    overflow: scroll;
+}
 
 .highlighted {
     background-color: #fff391;
+}
+
+.navigation {
+    background: #f4f5f6;
+    border-bottom: .1rem solid #d1d1d1;
+    display: block;
+    height: 5.2rem;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.navigation .title {
+    display: inline;
+    font-size: 1.6rem;
+    line-height: 5.2rem;
+    padding: 0;
+    text-decoration: none;
 }
 
 details > *:not(summary){

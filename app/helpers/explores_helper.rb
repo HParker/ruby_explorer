@@ -1,10 +1,10 @@
+MOUSEOVER_SCRIPT = "(window.marker ? window.marker.clear() : ''); window.marker = window.Editor.markText({ line: %s, ch: %s }, { line: %s, ch: %s }, {className: \"highlighted\"})"
+
 module ExploresHelper
-  def format_lex(lex)
-    content_tag(:ul) do
-      lex.map do |ll|
-        content_tag(:li, "#{ll[0][0]}-#{ll[0][1]} #{ll[1]} \"#{ll[2]}\" #{ll[3]}",
-                    onmouseover: "(window.marker ? window.marker.clear() : ''); window.marker = window.Editor.markText({ line: #{ll[0][0] - 1}, ch: #{ll[0][1]}}, { line: #{ll[0][0] - 1}, ch: #{ll[0][1] + ll[2].size}}, {className: \"highlighted\"})")
-      end.join.html_safe
+  def format_lex_line(ll)
+    content_tag(:span, class: "lex-line", onmouseover: MOUSEOVER_SCRIPT % [(ll[0][0] - 1), (ll[0][1]), (ll[0][0] - 1), (ll[0][1] + ll[2].size)]) do
+      [content_tag(:strong, ll[1]),
+      " \"#{ll[2].gsub("\n", "\\n")}\" #{ll[3]}\n"].join.html_safe
     end
   end
 
