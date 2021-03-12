@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="flex-container">
+  <div class="input">
+    <%= form_with url: "/explores", id: "code", local: false do |form| %>
+      <%= form.submit "analyse" %>
+      <%= form.text_area :code, id: "editor", class: "cm-s-dracula" %>
+    <% end %>
+  </div>
+
+  <div id="result">
+  </div>
+</div>
+
+<script>
+ window.addEventListener("load", () => {
+   const element = document.querySelector("#code");
+   const result = document.querySelector("#result");
+   element.addEventListener("ajax:success", (event) => {
+     const [_data, _status, xhr] = event.detail;
+     result.innerHTML = xhr.responseText;
+   });
+   element.addEventListener("ajax:error", () => {
+     element.insertAdjacentHTML("beforeend", "<p>ERROR</p>");
+   });
+ });
+
+
+</script>
