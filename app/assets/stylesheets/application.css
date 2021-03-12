@@ -18,6 +18,10 @@ body {
     background-color: #d3d3d3;
 }
 
+.highlighted {
+    background-color: #fff391;
+}
+
 details > *:not(summary){
     margin-left: 1em;
 }

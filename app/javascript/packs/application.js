@@ -10,10 +10,11 @@ import "channels"
 
 import CodeMirror from "codemirror"
 import "codemirror/mode/ruby/ruby.js";
+import 'codemirror/addon/selection/mark-selection';
 
 window.addEventListener("load", () => {
     const editor = document.querySelector("#editor");
-    CodeMirror.fromTextArea(editor, {
+    window.Editor = CodeMirror.fromTextArea(editor, {
         lineNumbers: true,
         mode: "ruby",
         indentUnit: 2
