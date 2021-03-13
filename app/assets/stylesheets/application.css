@@ -21,6 +21,12 @@ div .home {
     padding-top: 5rem;
 }
 
+.hidden {
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+}
+
 #result pre {
     overflow: scroll;
     resize: vertical;

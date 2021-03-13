@@ -8,8 +8,15 @@ RUBY
 
 class Explore
   attr_accessor :code
-  def initialize(code = nil)
-    @code = code || DEFAULT_PROGRAM
+  def initialize(code)
+    puts code.inspect
+    if code.nil?
+      puts "COD EWS NIL"
+      @code = DEFAULT_PROGRAM
+    else
+      puts "Code was not nil"
+      @code = code
+    end
   end
 
   def analyze
@@ -32,7 +39,7 @@ end
 class ExploresController < ApplicationController
   # GET /explores or /explores.json
   def index
-    @explore = Explore.new
+    @explore = Explore.new(params[:code])
   end
 
   # GET /explores/1 or /explores/1.json
