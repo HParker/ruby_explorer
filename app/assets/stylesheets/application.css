@@ -22,12 +22,16 @@ div .home {
 }
 
 #result pre {
-    height: 200px;
     overflow: scroll;
+    resize: vertical;
 }
 
 .highlighted {
     background-color: #fff391;
+}
+
+.lex-line:hover {
+    background-color: #d1d1d1;
 }
 
 .navigation {
@@ -41,10 +45,19 @@ div .home {
     right: 0;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 5;
 }
 
 .navigation .title {
+    display: inline;
+    font-size: 1.6rem;
+    line-height: 5.2rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+.navigation .source {
+    float: right;
     display: inline;
     font-size: 1.6rem;
     line-height: 5.2rem;

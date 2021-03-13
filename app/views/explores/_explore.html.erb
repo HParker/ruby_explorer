@@ -1,22 +1,29 @@
-<div class="row sexp">
+<div class="row">
   <div class="column">
-    <h2>Instructions</h2>
+    <h4>Instructions <small><a id="instructions-toggle" onClick="toggleResult('#instructions')">hide</a></small></h4>
+
     <div id="instructions">
       <pre><code><% @explore.instructions.lines.each do |line| %><%= line %><% end %></code></pre>
     </div>
   </div>
 </div>
 
-<div class="row lex">
+<div class="row">
   <div class="column">
-    <h2>Lex</h2>
-    <pre><code><% @explore.lex.each do |ll| %><%= format_lex_line(ll) %><% end %></code></pre>
+    <h4>Lex <small><a id="lex-toggle" onClick="toggleResult('#lex')">show</a></small></h4>
+
+    <div id="lex" style="display:none">
+      <pre><code><% @explore.lex.each do |ll| %><%= format_lex_line(ll) %><% end %></code></pre>
+    </div>
   </div>
 </div>
 
-<div class="row sexp">
+<div class="row">
   <div class="column">
-    <h2>Sexp</h2>
-    <pre><code><%= @explore.sexp.pretty_inspect %></code></pre>
+    <h4>Sexp <small><a id="sexp-toggle" onClick="toggleResult('#sexp')">show</a></small></h4>
+
+    <div id="sexp" style="display:none">
+      <pre><code><%= @explore.sexp.pretty_inspect %></code></pre>
+    </div>
   </div>
 </div>

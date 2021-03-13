@@ -1,31 +1,8 @@
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-<!-- CSS Reset -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-
-<!-- Milligram CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-
-
-<p id="notice"><%= notice %></p>
-<div class="navigation">
-  <section class="container">
-    <div class="row">
-      <div class="column">
-        <h1 class="title">
-          Ruby Explorer
-        </h1>
-      </div>
-    </div>
-  </section>
-</div>
-
 <section class="container">
   <div class="home">
     <div class="row home">
-      <div id="input" class="column">
-        <h2>Ruby</h2>
+      <div id="input" class="column column-25">
+        <h4>Ruby</h4>
         <%= form_with url: "/explores", id: "code", local: false do |form| %>
           <fieldset>
             <%= form.text_area :code, id: "editor", value: "def foo(bar)\n  bar * bar\nend" %>
@@ -34,7 +11,7 @@
           </fieldset>
         <% end %>
       </div>
-      <div id="result" class="column">
+      <div id="result" class="column column-75">
         <%= render "explore" %>
       </div>
     </div>
@@ -55,4 +32,15 @@
    });
  });
 
+ function toggleResult(id) {
+   const el = document.querySelector(id);
+   const toggle = document.querySelector(id + "-toggle");
+   if (el.style.display == "none") {
+     el.style.display = "block";
+     toggle.text = "hide";
+   } else {
+     el.style.display = "none";
+     toggle.text = "show";
+   }
+ }
 </script>
