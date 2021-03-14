@@ -11,10 +11,8 @@ class Explore
   def initialize(code)
     puts code.inspect
     if code.nil?
-      puts "COD EWS NIL"
       @code = DEFAULT_PROGRAM
     else
-      puts "Code was not nil"
       @code = code
     end
   end
