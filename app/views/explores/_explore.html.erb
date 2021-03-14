@@ -1,5 +1,5 @@
 <div class="hidden">
-  <input id="share-link" value="<%= explores_url(code: @explore.code) %>">
+  <input id="share-link" value="<%= explores_url(**@explore.to_h) %>">
 </div>
 
 
