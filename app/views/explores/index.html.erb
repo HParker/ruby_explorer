@@ -5,7 +5,9 @@
         <h4>Ruby</h4>
         <%= form_with url: "/explores", id: "code", local: false do |form| %>
           <fieldset>
-            <%= form.text_area :code, id: "editor", value: @explore.code %>
+            <div id="editor-container">
+              <%= form.text_area :code, id: "editor", value: @explore.code %>
+            </div>
             <br />
             <h5>Compiler Options</h5>
             <% @explore.flags.each do |flag, value| %>

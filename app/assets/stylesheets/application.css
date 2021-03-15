@@ -14,9 +14,6 @@
  *= require_self
  */
 
-body {
-    background-color: #d3d3d3;
-}
 div .home {
     padding-top: 5rem;
 }
@@ -25,6 +22,10 @@ div .home {
     position: absolute;
     left: -1000px;
     top: -1000px;
+}
+
+#editor-container {
+    outline: 1px solid #ddd;
 }
 
 #result pre {
