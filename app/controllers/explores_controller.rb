@@ -83,9 +83,18 @@ class ExploresController < ApplicationController
     # Only allow a list of trusted parameters through.
   def compiler_flag_params
     flags = {}
+    any_flags = false
     CONFIGURABLE_FLAGS.keys.each do |key|
       flags[key] = (params[key] == "true") ? true : false
+      if flags[key]
+        any_flags = true
+      end
     end
-    flags
+
+    if any_flags
+      flags
+    else
+      CONFIGURABLE_FLAGS
+    end
   end
 end
