@@ -84,7 +84,6 @@ class ExploresController < ApplicationController
   def compiler_flag_params
     flags = {}
     CONFIGURABLE_FLAGS.keys.each do |key|
-      puts "#{key} -> #{params[key].inspect}"
       flags[key] = (params[key] == "true") ? true : false
     end
     flags
