@@ -113,9 +113,9 @@ module ExploresHelper
   def format_instruction_line(il)
     il.split.map do |word|
       if INSTRUCTION_NAMES[word]
-        content_tag(:a, word, href: "https://github.com/ruby/ruby/blob/ruby_3_0/insns.def#L#{INSTRUCTION_NAMES[word]}")
+        content_tag(:a, CGI::escapeHTML(word), href: "https://github.com/ruby/ruby/blob/ruby_3_0/insns.def#L#{INSTRUCTION_NAMES[word]}")
       else
-        word
+        CGI::escapeHTML(word)
       end
     end.join(" ").concat("\n").html_safe
   end
