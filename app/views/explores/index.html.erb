@@ -12,7 +12,7 @@
             <h5>Compiler Options</h5>
             <% @explore.flags.each do |flag, value| %>
               <div>
-                <%= form.check_box flag, {checked: value}, true, false %>
+                <%= form.check_box flag, {checked: value}, "true", "false" %>
                 <%= form.label flag, flag.to_s, class: "label-inline" %>
               </div>
             <% end %>
