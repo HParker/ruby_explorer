@@ -1,24 +1,19 @@
-# README
+# [Ruby Explorer](https://www.rubyexplorer.xyz)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Explore Ruby's VM easily in your browser!
 
-Things you may want to cover:
+- See what instructions are generated
+- Configure the compiler optimizations to see how you instructions change
+- See the Lex & S-Expressions that your program is converted to
 
-* Ruby version
+Contributions welcome!
 
-* System dependencies
+## How to build
 
-* Configuration
+```
+bundle install
+./bin/rails s
+./bin/webpack-dev-server # (in another tab)
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A database connection is required, but not used. Any old postgres URL will do. Hopefully we will remove the database requirement eventually.
