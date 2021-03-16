@@ -65,6 +65,7 @@ end
 class ExploresController < ApplicationController
   # GET /explores or /explores.json
   def index
+    puts compiler_flag_params
     @explore = Explore.new(params[:code], compiler_flag_params)
     @explore.analyze
   end
