@@ -86,6 +86,7 @@ details > *:not(summary){
   display: flex;
 }
 
+
 /* BASICS */
 
 .CodeMirror {
