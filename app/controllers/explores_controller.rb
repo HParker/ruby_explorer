@@ -17,7 +17,7 @@ CONFIGURABLE_FLAGS = {
   frozen_string_literal: false,
   debug_frozen_string_literal: false,
   coverage_enabled: true,
-  # debug_level: 0
+  # debug_level: 0 # TODO: allow configuring debug level
 }
 
 class Explore
@@ -59,6 +59,10 @@ class Explore
 
   def to_h
     @flags.merge(code: @code)
+  end
+
+  def to_ruby
+    "ruby --dump=insns -e '#{@code.gsub("\n", ";")}'"
   end
 end
 

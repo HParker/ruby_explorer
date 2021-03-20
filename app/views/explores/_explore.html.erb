@@ -6,7 +6,12 @@
 <div class="row">
   <div class="column">
     <h4>Instructions <small><a id="instructions-toggle" onClick="toggleResult('#instructions')">hide</a></small></h4>
-
+    <div class="column">
+      <div class="row">
+        <input id="ruby-link" value="<%= @explore.to_ruby %>">
+        <a class="button button-clear" id="copy-instructions-link" onClick="copyRuby()">Copy</a>
+      </div>
+    </div>
     <div id="instructions">
       <pre><code><% @explore.instructions.lines.each do |line| %><%= format_instruction_line(line) %><% end %></code></pre>
     </div>

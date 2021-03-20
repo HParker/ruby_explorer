@@ -67,4 +67,14 @@
    /* Copy the text inside the text field */
    document.execCommand("copy");
  }
+
+ function copyRuby() {
+   el = document.querySelector("#ruby-link");
+   el.focus();
+   el.select();
+   el.setSelectionRange(0, 99999); /* For mobile devices */
+
+   /* Copy the text inside the text field */
+   document.execCommand("copy");
+ }
 </script>

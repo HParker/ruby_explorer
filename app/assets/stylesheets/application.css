@@ -26,6 +26,7 @@ div .home {
 
 #editor-container {
     outline: 1px solid #ddd;
+    max-width: 270px;
 }
 
 #result pre {
