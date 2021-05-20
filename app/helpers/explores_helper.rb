@@ -110,10 +110,15 @@ module ExploresHelper
     end
   end
 
+  def normalize_word(word)
+    word.sub("_WC_0", "")
+  end
+
   def format_instruction_line(il)
     il.split.map do |word|
-      if INSTRUCTION_NAMES[word]
-        content_tag(:a, CGI::escapeHTML(word), href: "https://github.com/ruby/ruby/blob/ruby_3_0/insns.def#L#{INSTRUCTION_NAMES[word]}")
+      normalized_word = normalize_word(word)
+      if INSTRUCTION_NAMES[normalized_word]
+        content_tag(:a, CGI::escapeHTML(word), href: "https://github.com/ruby/ruby/blob/ruby_3_0/insns.def#L#{INSTRUCTION_NAMES[normalized_word]}")
       else
         CGI::escapeHTML(word)
       end
