@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 3bd6b688d0d46f3e2c4fb1d2ad8cbd2f61caf7ff
+  revision: 5a8d7d904fd205831ca40c2ad2a914515939260e
   branch: main
   specs:
     actioncable (7.0.0.alpha)
@@ -116,10 +116,10 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
-    ffi (1.15.0)
-    ffi (1.15.0-java)
-    ffi (1.15.0-x64-mingw32)
-    ffi (1.15.0-x86-mingw32)
+    ffi (1.15.1)
+    ffi (1.15.1-java)
+    ffi (1.15.1-x64-mingw32)
+    ffi (1.15.1-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -143,16 +143,16 @@ GEM
     msgpack (1.4.2-java)
     nio4r (2.5.7)
     nio4r (2.5.7-java)
-    nokogiri (1.11.5)
+    nokogiri (1.11.6)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    nokogiri (1.11.5-java)
+    nokogiri (1.11.6-java)
       racc (~> 1.4)
-    nokogiri (1.11.5-x64-mingw32)
+    nokogiri (1.11.6-x64-mingw32)
       racc (~> 1.4)
-    nokogiri (1.11.5-x86-mingw32)
+    nokogiri (1.11.6-x86-mingw32)
       racc (~> 1.4)
-    nokogiri (1.11.5-x86_64-darwin)
+    nokogiri (1.11.6-x86_64-darwin)
       racc (~> 1.4)
     pg (1.2.3)
     public_suffix (4.0.6)
@@ -222,9 +222,9 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.7.4)
       websocket-extensions (>= 0.1.0)
-    websocket-driver (0.7.3-java)
+    websocket-driver (0.7.4-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -259,4 +259,4 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 BUNDLED WITH
-   2.2.14
+   2.2.17
