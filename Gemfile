@@ -3,8 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', github: 'rails/rails', branch: 'main'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
