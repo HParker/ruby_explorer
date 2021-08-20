@@ -24,7 +24,7 @@ class ExploresController < ApplicationController
     flags_configured = false
     CONFIGURABLE_FLAGS.keys.each do |key|
       flags[key] = (compile_params[key] == "true") ? true : false
-      if !params[key].nil?
+      if !compile_params[key].nil?
         flags_configured = true
       end
     end
