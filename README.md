@@ -8,6 +8,8 @@ Explore Ruby's VM easily in your browser!
 - Configure the compiler optimizations to see how you instructions change
 - See the Lex & S-Expressions that your program is converted to
 
+Updates the instructions when you finish typing!
+
 Contributions welcome!
 
 ## How to build
