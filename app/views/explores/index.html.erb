@@ -16,7 +16,6 @@
                 <%= form.label flag, flag.to_s, class: "label-inline" %>
               </div>
             <% end %>
-            <%= form.submit "analyze", class: "button-primary" %>
             <button class="button button-outline" onClick="copyShare()">Copy link</button>
           </fieldset>
         <% end %>
@@ -33,19 +32,6 @@
 </section>
 
 <script>
- window.addEventListener("load", () => {
-   const element = document.querySelector("#code");
-   const result = document.querySelector("#result");
-   const editor = document.querySelector("#editor");
-   element.addEventListener("ajax:success", (event) => {
-     const [_data, _status, xhr] = event.detail;
-     result.innerHTML = xhr.responseText;
-   });
-   element.addEventListener("ajax:error", () => {
-     result.innerHTML = "ERROR";
-   });
- });
-
  function toggleResult(id) {
    const el = document.querySelector(id);
    const toggle = document.querySelector(id + "-toggle");

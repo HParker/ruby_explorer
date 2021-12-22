@@ -9,6 +9,9 @@ class ExploresController < ApplicationController
 
   # POST /explores or /explores.json
   def create
+    puts "CODE:"
+    puts compile_params
+    puts "CODE"
     @explore = Explore.new(compile_params[:code], compiler_flag_params)
     if @explore.analyze
       render partial: "explore"
@@ -41,6 +44,6 @@ class ExploresController < ApplicationController
   end
 
   def compile_params
-    params.permit(:code, :authenticity_token, :commit, *CONFIGURABLE_FLAGS.keys)
+    params.permit(:code, :authenticity_token, :commit, *CONFIGURABLE_FLAGS.keys, explore: [:code, *CONFIGURABLE_FLAGS.keys])
   end
 end
