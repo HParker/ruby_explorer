@@ -1,6 +1,7 @@
 # [Ruby Explorer](https://www.rubyexplorer.xyz)
 
-<img width="1237" alt="Screen Shot 2021-04-21 at 10 05 35 AM" src="https://user-images.githubusercontent.com/4482399/115593290-30549180-a289-11eb-9ef8-677c695aab1d.png">
+<img width="1147" alt="Screen Shot 2021-12-22 at 1 10 39 PM" src="https://user-images.githubusercontent.com/4482399/147156233-d3919865-c14d-4b7c-9076-28870c7e9333.png">
+
 
 Explore Ruby's VM easily in your browser!
 
