@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 310d62a443b9157bb48d778f49ba236e18b06b63
+  revision: b7e1ea2eeb524224dc06c08fbb779f99d20dde2f
   branch: main
   specs:
     actioncable (7.1.0.alpha)
@@ -86,7 +86,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/web-console.git
-  revision: 3f101dede864b88719d432ec2ae8bfafc3378da0
+  revision: e3dcf4c588af526eafcf1ce9413e62d846599538
   specs:
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -222,7 +222,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   java
