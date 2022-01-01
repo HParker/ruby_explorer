@@ -140,14 +140,19 @@ GEM
     mini_portile2 (2.6.1)
     minitest (5.15.0)
     msgpack (1.4.2)
+    msgpack (1.4.2-java)
     nio4r (2.5.8)
+    nio4r (2.5.8-java)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
+    puma (5.5.2-java)
+      nio4r (~> 2.0)
     racc (1.6.0)
+    racc (1.6.0-java)
     rack (2.2.3)
     rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
@@ -170,6 +175,8 @@ GEM
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -197,6 +204,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2021.5)
+      tzinfo (>= 1.0.0)
     webdrivers (5.0.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
@@ -207,6 +216,8 @@ GEM
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-driver (0.7.5-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -238,6 +249,9 @@ DEPENDENCIES
   web-console!
   webdrivers
   webpacker (~> 5.0)
+
+RUBY VERSION
+   ruby 3.1.0p0
 
 BUNDLED WITH
    2.2.32
