@@ -17,12 +17,14 @@ typedef struct ProgramArgs {
 
 typedef struct ProgramInstruction {
   char * name;
+  int line;
   int size;
   ProgramArgs * arg_groups;
 } ProgramInstruction;
 
 typedef struct Program {
   int index;
+  int cur_line;
   ProgramInstruction * instructions;
 } Program;
 

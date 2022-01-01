@@ -1,7 +1,4 @@
-FLEX = /usr/local/opt/flex/bin/flex
-CC := gcc
 CFLAGS := $(CFLAGS) -std=c99
-RAYLIB = `pkg-config --libs --cflags raylib`
 
 lang: main.o compiler.o parser.o scanner.o
 	$(CC) -o lang main.o compiler.o parser.o scanner.o
@@ -20,10 +17,10 @@ parser.h parser.c: parser.y lemon
 
 # Lexer
 scanner.c scanner.h: scanner.l
-	$(FLEX) --outfile=scanner.c --header-file=scanner.h scanner.l
+	flex --outfile=scanner.c --header-file=scanner.h scanner.l
 
 lemon: lemon.c
-	$(CC) -o lemon lemon.c
+	cc -o lemon lemon.c
 
 .PHONY: clean
 clean:

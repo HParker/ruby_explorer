@@ -3,35 +3,18 @@
 #include "scanner.h"
 #include "lang.h"
 
-void print_program(Program * prog) {
-  for (int i = 0; i < prog->index; i++) {
-    printf("## %s\n\n", prog->instructions[i].name);
-
-    printf("- takes %i arguments: ", prog->instructions[i].arg_groups[0].size);
-    for (int j = 0; j < prog->instructions[i].arg_groups[0].size; j++) {
-      printf("`%s` ", prog->instructions[i].arg_groups[0].args[j]);
-    }
-    printf("\n");
-    printf("- pops %i arguments: ", prog->instructions[i].arg_groups[1].size);
-    for (int j = 0; j < prog->instructions[i].arg_groups[1].size; j++) {
-      printf("`%s` ", prog->instructions[i].arg_groups[1].args[j]);
-    }
-    printf("\n");
-    printf("- pushes %i arguments: ", prog->instructions[i].arg_groups[2].size);
-    for (int j = 0; j < prog->instructions[i].arg_groups[2].size; j++) {
-      printf("`%s` ", prog->instructions[i].arg_groups[2].args[j]);
-    }
-    printf("\n");
-    printf("\n");
-  }
-}
-
 void short_print(Program * prog) {
   printf("RUBY_STACK_INFO = {\n");
   for (int i = 0; i < prog->index; i++) {
     printf("  \"%s\" => \"%i args ", prog->instructions[i].name, prog->instructions[i].arg_groups[0].size);
     printf("(+%i,", prog->instructions[i].arg_groups[2].size);
     printf("-%i)\",\n", prog->instructions[i].arg_groups[1].size);
+  }
+  printf("}\n\n");
+
+  printf("INSTRUCTION_NAMES = {\n");
+  for (int i = 0; i < prog->index; i++) {
+    printf("  \"%s\" => %i,\n", prog->instructions[i].name, prog->instructions[i].line);
   }
   printf("}\n");
 }
@@ -61,10 +44,9 @@ Program parseProgram(FILE * file) {
     }
   }
 
+  int line = 0;
   yyscan_t scanner;
-  yylex_init(&scanner);
-  // setup scanner for stdin
-  /* yyset_in(stdin, scanner); */
+  yylex_init_extra(&line, &scanner);
 
   // setup scanner for a file
   yyset_in(file, scanner);
@@ -77,6 +59,7 @@ Program parseProgram(FILE * file) {
   do  {
     lexCode = yylex(scanner);
     strcpy(tk, yyget_text(scanner));
+    prog.cur_line = line;
     /* printf("lexing '%s' at (%i,%i)\n", tk, yyget_lineno(scanner), yyget_column(scanner)); */
     Parse(parser, lexCode, tk, &prog);
 

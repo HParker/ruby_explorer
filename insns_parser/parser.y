@@ -20,7 +20,9 @@
 program ::= instructions.
 instructions ::= instructions instruction.
 instructions ::= instruction.
-instruction ::= DEFINITION NAME(INSTR_NAME) args args args. { strcpy(prog->instructions[prog->index].name, INSTR_NAME); prog->index++; }
+instruction ::= DEFINITION name(INSTR_NAME) args args args. { strcpy(prog->instructions[prog->index].name, INSTR_NAME); prog->index++; }
+
+name(N) ::= NAME(I). { N = I; prog->instructions[prog->index].line = prog->cur_line; }
 
 args ::= OPEN_PAREN arguments CLOSE_PAREN. { prog->instructions[prog->index].size++; }
 arguments ::= arguments COMMA argument.

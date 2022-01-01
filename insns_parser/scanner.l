@@ -11,6 +11,8 @@ int comment_nesting = 0;
 %x C_CODE
 %x COMMENT
 
+%option extra-type="int *"
+
 %%
 
 "DEFINE_INSN" { return DEFINITION; }
@@ -39,7 +41,7 @@ int comment_nesting = 0;
     ++comment_nesting;
   }
   .
-  \n
+  \n { (*yyextra)++; }
 }
 
 "/*" {
@@ -58,11 +60,10 @@ int comment_nesting = 0;
     ++comment_nesting;
   }
   .
-  [^/*\n]+       ; /* Line 12 */
-  \n             ; /* Line 14 */
+  \n { (*yyextra)++; }
 }
 
+\n { (*yyextra)++; }
 .
-\n
 
 %%
